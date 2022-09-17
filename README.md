@@ -10,8 +10,7 @@ Flix is an app that allows users to browse movies from the [The Movie Database A
 - [ ] User can view the movie poster image for each movie.
 
 ### App Walkthrough GIF
-
-![image](https://user-images.githubusercontent.com/99046066/190837629-948cb013-f4dd-42a4-8503-8fce41741ef2.png)
+![Screen Recording 2022-09-16 at 9 36 09 PM](https://user-images.githubusercontent.com/99046066/190838293-3c5b37cc-2ffb-46dd-8f57-1e74143fe14e.gif)
 
 ### Notes
 Building this app was difficult for me at first since I barely had experience with TableView and Networking. However, the instructions were give so clear that explained everything so well. Indeed, I think the most challenging part was adding posters into Movie Cells, and I'm glad that I got through it!
