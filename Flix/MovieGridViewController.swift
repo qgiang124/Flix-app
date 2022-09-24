@@ -13,11 +13,20 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
     var movies = [[String:Any]]()
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         collectionView.delegate = self
         collectionView.dataSource = self
+        
+        let layout = collectionView.collectionViewLayout as! UICollectionViewFlowLayout
+        
+        layout.minimumLineSpacing = 4
+        layout.minimumInteritemSpacing = 4
+        
+        let width = (view.frame.size.width - layout.minimumInteritemSpacing) / 2
+        layout.itemSize = CGSize(width: width, height: width * 3 / 2)
         
         let url = URL(string: "https://api.themoviedb.org/3/movie/297762/similar?api_key=35954f906c72a6702fe01c8aff387e77")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
@@ -33,7 +42,6 @@ class MovieGridViewController: UIViewController, UICollectionViewDataSource, UIC
                  self.movies = dataDictionary["results"] as! [[String:Any]]
                  
                  self.collectionView.reloadData()
-                 print(self.movies)
 
              }
         }
